@@ -12,7 +12,7 @@ describe('API Endpoint Testleri', () => {
     
     // Ana sayfa testi
     test('GET / should return success message', async () => {
-        const res = await request(app).get('/');
+        const res = await request(app).get('/').set('Accept', 'application/json');
         expect(res.statusCode).toEqual(200);
         expect(res.body.message).toBe("DevOps Pipeline Demo çalışıyor");
     });
