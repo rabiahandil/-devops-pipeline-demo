@@ -1,0 +1,62 @@
+name: DevOps Pipeline CI/CD
+
+# Pipeline ne zaman tetiklenecek?
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  # CI Aşaması: Test ve Build
+  continuous-integration:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Kodu Checkout Et
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # 2. Node.js Kurulumu
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      # 3. Bağımlılıkları Yükle
+      - name: Install Dependencies
+        run: npm install
+
+      # 4. Testleri Çalıştır
+      - name: Run Tests
+        run: npm test
+
+      # 5. Docker Image Build Et
+      - name: Build Docker Image
+        run: docker build -t devops-pipeline-demo:${{ github.sha }} .
+
+      # 6. Güvenlik Taraması (Trivy)
+      - name: Security Scan (Trivy)
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: 'devops-pipeline-demo:${{ github.sha }}'
+          format: 'table'
+          exit-code: '1' # Kritik zafiyet varsa pipeline'ı durdur
+          ignore-unfixed: true
+          vuln-type: 'os,library'
+          severity: 'CRITICAL,HIGH'
+
+  # CD Aşaması: Deployment (Simülasyon)
+  continuous-deployment:
+    needs: continuous-integration
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Deploy to Production
+        run: |
+          echo "🚀 Deployment süreci başlatıldı..."
+          echo "Image: devops-pipeline-demo:${{ github.sha }}"
+          # Burada gerçek bir SSH komutu veya Kubernetes deployment komutu olabilir
+          echo "✅ Başarıyla deploy edildi!"
