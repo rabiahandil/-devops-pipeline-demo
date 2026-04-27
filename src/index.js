@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>DevOps Pipeline Demo | Dashboard</title>
+                <title>DevOps Pipeline Demo 10. | Dashboard</title>
                 <script src="https://cdn.tailwindcss.com"></script>
                 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
                 <style>
@@ -50,8 +50,8 @@ app.get('/', (req, res) => {
                         </div>
                         
                         <header class="mb-12">
-                            <h1 class="text-4xl md:text-5xl font-bold gradient-text mb-4">DevOps Pipeline Demo</h1>
-                            <p class="text-slate-400 text-lg">Modern Yazılım Dağıtım Süreçleri ve Konteynerizasyon Test Ortamı</p>
+                            <h1 class="text-4xl md:text-5xl font-bold gradient-text mb-4">DevOps Pipeline Demo 10.</h1>
+                            <p class="text-slate-400 text-lg">Öğrenci: Rabia Handil (24080410008)</p>
                         </header>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">

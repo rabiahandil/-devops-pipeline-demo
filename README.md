@@ -1,4 +1,4 @@
-# DevOps Pipeline Demo 🚀
+# DevOps Pipeline Demo 10. 🚀
 
 Bu proje, modern bir web uygulamasının **Konteynerleştirme (Docker)** ve **CI/CD (GitHub Actions)** süreçlerini uçtan uca simüle etmek amacıyla hazırlanmış bir eğitim çalışmasıdır.
 
@@ -103,4 +103,7 @@ docker compose up --build
 
 ---
 
-**DevOps Pipeline Demo** - Rabia tarafından hazırlandı.
+🔥 **DevOps Pipeline Demo 10.**
+👨‍🎓 **Öğrenci:** Rabia Handil
+🆔 **Okul Numarası:** 24080410008
+📝 *Teslim amaçlı hazırlanmıştır.*
