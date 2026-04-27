@@ -17,9 +17,6 @@ COPY . .
 # Uygulamanın çalıştığı güvenli ve küçük boyuttaki son aşama
 FROM node:20-alpine
 
-# Güvenlik için uygulamayı root olmayan bir kullanıcıyla çalıştırıyoruz
-USER node
-
 WORKDIR /app
 
 # Sadece gerekli production bağımlılıklarını builder aşamasından alıyoruz
@@ -32,6 +29,9 @@ COPY --from=builder /app/src ./src
 # Ortam değişkenleri
 ENV NODE_ENV=production
 ENV PORT=3000
+
+# Güvenlik için uygulamayı root olmayan bir kullanıcıyla çalıştırıyoruz
+USER node
 
 # Uygulama portunu dışarı aç
 EXPOSE 3000
