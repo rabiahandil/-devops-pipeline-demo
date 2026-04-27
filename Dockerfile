@@ -1,6 +1,6 @@
 # --- Stage 1: Build ---
 # Uygulamanın bağımlılıklarını yüklediğimiz aşama
-FROM node:20-slim AS builder
+FROM node:20-alpine AS builder
 
 WORKDIR /app
 
@@ -15,7 +15,7 @@ COPY . .
 
 # --- Stage 2: Production ---
 # Uygulamanın çalıştığı güvenli ve küçük boyuttaki son aşama
-FROM node:20-slim
+FROM node:20-alpine
 
 # Güvenlik için uygulamayı root olmayan bir kullanıcıyla çalıştırıyoruz
 USER node
