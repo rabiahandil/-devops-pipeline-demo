@@ -51,7 +51,7 @@ app.get('/', (req, res) => {
                         
                         <header class="mb-12">
                             <h1 class="text-4xl md:text-5xl font-bold gradient-text mb-4">DevOps Pipeline Demo 10.</h1>
-                            <p class="text-slate-400 text-lg">Öğrenci: Rabia Handil (24080410008)</p>
+                            <p class="text-slate-400 text-lg">Modern Yazılım Dağıtım Süreçleri ve Konteynerizasyon Test Ortamı</p>
                         </header>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
