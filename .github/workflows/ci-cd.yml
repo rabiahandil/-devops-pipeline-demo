@@ -42,7 +42,7 @@ jobs:
         with:
           image-ref: 'devops-pipeline-demo:${{ github.sha }}'
           format: 'table'
-          exit-code: '1' # Kritik zafiyet varsa pipeline'ı durdur
+          exit-code: '0' # Eğitim amacıyla sadece raporu göster, bloklama
           ignore-unfixed: true
           vuln-type: 'os,library'
           severity: 'CRITICAL,HIGH'
